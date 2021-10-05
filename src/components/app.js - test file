@@ -1,0 +1,72 @@
+import React, { useState } from "react";
+import { Route, Link, Redirect } from "react-router-dom";
+import "./App.css";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import UserButtons from "./components/UserButtons";
+import UserProfile from "./components/UserProfile";
+import UserRegistration from "./components/UserRegistration";
+import WorkshopProfile from "./components/WorkshopProfile";
+import WorkshopRecord from "./components/WorkshopRecord";
+import WorkshopRegistration from "./components/WorkshopRegistration";
+import Workshops from "./components/Workshops";
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  //hi evans here
+  return (
+    <div className="container">
+      <nav>
+        <div className="row align-items-center justify-content-center">
+          <div className="col">
+            <Link to="/">Home</Link>
+          </div>
+          <div className="col">
+            <Link to="/workshops">Workshops</Link>
+          </div>
+          <div className="col">
+            <Link to="/contact">Contact</Link>
+          </div>
+          <div className="col">
+            <UserButtons
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          </div>
+        </div>
+      </nav>
+      <main>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/login">
+          <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+        </Route>
+        <Route path="/user-profile">
+          <UserProfile isLoggedIn={isLoggedIn} />
+        </Route>
+        <Route path="/user-registration">
+          <UserRegistration
+            isLoggedIn={isLoggedIn}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+        </Route>
+        <Route path="/workshop-registration">
+          <WorkshopRegistration />
+        </Route>
+        <Route path="/workshops">
+          <Workshops />
+        </Route>
+        <Redirect to="/" />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
