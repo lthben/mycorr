@@ -7,8 +7,8 @@ This is a fake business website for the purposes of learning the MERN (MongoDB, 
 There are only two pages at the moment, the Home page and Workshops page. The Workshops page lists the STEM workshops that the user can "register" for. The user needs to create a login profile first before being allowed to register.
 
 This project is broken down into two parts:
-Front-end: [React] (https://github.com/lthben/mycorr-react-app.git)
-Back-end: [Express, Node, MongoDB] (https://github.com/lthben/mycorr-express-app.git)
+Front-end: React [Github](https://github.com/lthben/mycorr-react-app.git)
+Back-end: Express, Node, MongoDB [Github](https://github.com/lthben/mycorr-express-app.git)
 
 ## Live link
 
